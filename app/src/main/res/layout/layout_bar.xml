@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="70dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:weightSum="1">
+
+        <ImageView
+            android:id="@+id/sys"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="0.1"
+            android:padding="@dimen/dp_5"
+            android:src="@drawable/sys" />
+
+        <EditText
+            android:id="@+id/edit_sousuo"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="0.8"
+            android:background="@drawable/edit_bg"
+            android:focusable="false"
+            android:hint="搜索" />
+
+        <ImageView
+            android:id="@+id/xx"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_weight="0.1"
+            android:src="@drawable/xx" />
+    </LinearLayout>
+</RelativeLayout>

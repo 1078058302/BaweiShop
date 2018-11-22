@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.umeng.soexample.mvp.view.NestedScrollView
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <cn.bingoogolapple.bgabanner.BGABanner
+                    android:id="@+id/banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_200"></cn.bingoogolapple.bgabanner.BGABanner>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/sys"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_weight="0.1"
+                        android:padding="@dimen/dp_5"
+                        android:src="@drawable/sys" />
+
+                    <EditText
+                        android:id="@+id/edit_one"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/edit_bg"
+                        android:focusable="false"
+                        android:hint="搜索" />
+
+                    <ImageView
+                        android:id="@+id/xx"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_20"
+                        android:layout_weight="0.1"
+                        android:src="@drawable/xx" />
+                </LinearLayout>
+
+                <include
+                    android:id="@+id/count"
+                    layout="@layout/count_down"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_below="@+id/banner"></include>
+
+                <RelativeLayout
+                    android:id="@+id/recycler1"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:layout_below="@id/count"
+                    android:background="#FFFFFF">
+
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/viewPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"></android.support.v4.view.ViewPager>
+
+                    <LinearLayout
+                        android:id="@+id/points"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal" />
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/run"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@+id/recycler1"
+                    android:orientation="horizontal">
+                     
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:text="京东快报:"
+                        android:textSize="20dp" />  
+
+                    <com.gongwen.marqueen.SimpleMarqueeView
+                        android:id="@+id/simpleMarqueeView"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:flipInterval="2500"
+                        android:inAnimation="@anim/in_top"
+                        android:outAnimation="@anim/out_bottom"
+                        app:marqueeAnimDuration="2000"
+                        app:smvTextColor="#d43c"
+                        app:smvTextEllipsize="end"
+                        app:smvTextGravity="center_horizontal"
+                        app:smvTextSingleLine="true"
+                        app:smvTextSize="15sp" />
+                      
+
+                    <View
+                        android:layout_width="2dp"
+                        android:layout_height="15dp"
+                        android:layout_marginRight="17dp"
+                        android:layout_marginTop="6dp"
+                        android:background="#9999" />  
+                         
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginRight="2dp"
+                        android:text="更多"
+                        android:textSize="18dp" />
+
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/run"></android.support.v7.widget.RecyclerView>
+            </RelativeLayout>
+        </com.umeng.soexample.mvp.view.NestedScrollView>
+
+        <com.umeng.soexample.mvp.view.LayoutBar
+            android:id="@+id/linea"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+        </com.umeng.soexample.mvp.view.LayoutBar>
+    </com.cjj.MaterialRefreshLayout>
+
+
+</RelativeLayout>
